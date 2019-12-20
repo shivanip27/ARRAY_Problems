@@ -2,38 +2,36 @@
 #define SIZE 5
 main()
 {
-	int arr1[SIZE], N_arr[SIZE],i,j,k,c=0,p=0;
-	
+	int arr1[SIZE], N_arr[SIZE],i,j,k=0,c=0,p=0,t=0;
+
 	printf("Enter the array element: ");
-	
 	for(i=0;i<SIZE;i++)
 	scanf("%d",&arr1[i]);
-	
+
 	for(i=0;i<SIZE;i++)
 	printf("%d ",arr1[i]);
-	
 	printf("\n");
-	
-	for(k=0;k<SIZE;k++)
+
+	for(i=0;i<SIZE;i++)
 	{
-		for (j=2,c=0,p=0;j<arr1[k];j++)
+		for (j=2;j<arr1[i];j++)
 	{
-		
-		if(arr1[k] % j ==0)
-	  {
-		c=1;
+        if(arr1[i] % j ==0)
 		break;
-	  }
-        }
-		if(c==0)
+	}
+       if(j==arr1[i])
 		{
-			N_arr[p]=arr1[i];
-            p++;			
+			p++;
+			//printf("%d ",arr1[i]);
+			N_arr[k++]=arr1[i];
 		}
 	}
-	
-	printf("The count of prime nos in array is = %d\n",p);
+	//printf("\n");
+    printf("The count of prime nos in array is = %d\n",p);
+
     	for(k=0;k<p;k++)
+    	{
     	printf("%d ",N_arr[k]);
+    	}
     	printf("\n");
 }
